@@ -35,6 +35,8 @@ class BaseLlmConfig(ABC):
         http_client_proxies: Optional[Union[Dict, str]] = None,
         # DeepSeek specific
         deepseek_base_url: Optional[str] = None,
+        # volces specific
+        volces_base_url: Optional[str] = None,
     ):
         """
         Initializes a configuration class instance for the LLM.
@@ -73,6 +75,8 @@ class BaseLlmConfig(ABC):
         :type http_client_proxies: Optional[Dict | str], optional
         :param deepseek_base_url: DeepSeek base URL to be use, defaults to None
         :type deepseek_base_url: Optional[str], optional
+        :param volces_base_url: Volces base URL to be use, defaults to None
+        :type volces_base_url: Optional[str], optional
         """
 
         self.model = model
@@ -98,6 +102,9 @@ class BaseLlmConfig(ABC):
 
         # DeepSeek specific
         self.deepseek_base_url = deepseek_base_url
+
+        # volces specific
+        self.volces_base_url = volces_base_url
 
         # AzureOpenAI specific
         self.azure_kwargs = AzureConfig(**azure_kwargs) or {}

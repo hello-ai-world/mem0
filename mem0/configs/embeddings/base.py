@@ -27,6 +27,8 @@ class BaseEmbedderConfig(ABC):
         http_client_proxies: Optional[Union[Dict, str]] = None,
         # VertexAI specific
         vertex_credentials_json: Optional[str] = None,
+        # Volces specific
+        volces_base_url: Optional[str] = None,
     ):
         """
         Initializes a configuration class instance for the Embeddings.
@@ -68,3 +70,6 @@ class BaseEmbedderConfig(ABC):
 
         # VertexAI specific
         self.vertex_credentials_json = vertex_credentials_json
+
+        # Volces specific
+        self.volces_base_url = volces_base_url

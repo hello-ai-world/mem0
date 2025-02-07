@@ -45,7 +45,7 @@ class LlmFactory:
             llm_config_class = load_class(config_class_type)
             return llm_class(config=llm_config_class(**config_data))
         else:
-            raise ValueError(f"Unsupported Llm provider: {provider_name}")
+            raise ValueError(f"Unsupported Llm provider in embedchain/: {provider_name}")
 
 
 class EmbedderFactory:

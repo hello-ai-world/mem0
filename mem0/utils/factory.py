@@ -24,6 +24,7 @@ class LlmFactory:
         "azure_openai_structured": "mem0.llms.azure_openai_structured.AzureOpenAIStructuredLLM",
         "gemini": "mem0.llms.gemini.GeminiLLM",
         "deepseek": "mem0.llms.deepseek.DeepSeekLLM",
+        "volces": "mem0.llms.volces.VolcesLLM",
     }
 
     @classmethod
@@ -34,7 +35,7 @@ class LlmFactory:
             base_config = BaseLlmConfig(**config)
             return llm_instance(base_config)
         else:
-            raise ValueError(f"Unsupported Llm provider: {provider_name}")
+            raise ValueError(f"Unsupported Llm provider in utils/: {provider_name}")
 
 
 class EmbedderFactory:
@@ -46,6 +47,7 @@ class EmbedderFactory:
         "gemini": "mem0.embeddings.gemini.GoogleGenAIEmbedding",
         "vertexai": "mem0.embeddings.vertexai.VertexAIEmbedding",
         "together": "mem0.embeddings.together.TogetherEmbedding",
+        "volces": "mem0.embeddings.volces.VolcesEmbedding",
     }
 
     @classmethod

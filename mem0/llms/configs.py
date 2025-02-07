@@ -23,7 +23,8 @@ class LlmConfig(BaseModel):
             "azure_openai_structured",
             "gemini",
             "deepseek",
+            "volces",
         ):
             return v
         else:
-            raise ValueError(f"Unsupported LLM provider: {provider}")
+            raise ValueError(f"Unsupported LLM provider in llms/: {provider}")
